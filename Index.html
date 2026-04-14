@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvraj | Fintech Video Growth Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        indigoBlack: '#0B0F1A',
+                        primaryAccent: '#7C3AED',
+                        secondaryAccent: '#22D3EE',
+                        textPrimary: '#F1F5F9',
+                        textSecondary: '#94A3B8',
+                        glassBorder: 'rgba(124, 58, 237, 0.25)',
+                    },
+                    borderRadius: { 'xl': '16px', '2xl': '24px' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0F1A; color: #F1F5F9; overflow-x: hidden; }
+        .glass { background: rgba(11, 15, 26, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(124, 58, 237, 0.25); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        #videoModal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        #modalContent { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
+            <div class="text-xl font-bold tracking-tighter">YUVRAJ<span class="text-secondaryAccent">.VISUALS</span></div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-textSecondary">
+                <a href="#work" class="hover:text-primaryAccent transition">Work</a>
+                <a href="#testimonials" class="hover:text-primaryAccent transition">Trust</a>
+                <a href="#services" class="hover:text-primaryAccent transition">Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative group reveal">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-indigoBlack rounded-2xl overflow-hidden aspect-square border border-glassBorder">
+                    <img src="my_img2.png" alt="Yuvraj" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+            </div>
+            <div class="reveal">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Editing the <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-primaryAccent to-secondaryAccent">Future of Finance.</span>
+                </h1>
+                <p class="text-lg text-textSecondary mb-8 max-w-lg">Positioning your fintech product as a market leader through precision editing and data-driven growth.</p>
+                <div class="flex gap-4">
+                    <a href="#work" class="px-8 py-4 bg-primaryAccent rounded-xl font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition">View Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 reveal">Strategic <span class="text-secondaryAccent">Deliverables</span></h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[650px]">
+            <div onclick="openModal('vid1', 'Fintech App Experience', 'Created a seamless UI walkthrough for an investment app focusing on user onboarding.', '+25% User Retention')" 
+                 class="md:col-span-2 md:row-span-2 glass rounded-2xl overflow-hidden relative group cursor-pointer reveal">
+                <div class="absolute top-4 left-4 z-10 bg-secondaryAccent/20 backdrop-blur-md border border-secondaryAccent/30 text-secondaryAccent px-3 py-1 rounded-full text-xs font-bold">App Showcase</div>
+                <video id="vid1_preview" src="eec40ded345626cacdb7ec23829fb7f3.mp4" muted loop playsinline class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500"></video>
+                <div class="absolute bottom-0 w-full p-6 bg-gradient-to-t from-indigoBlack to-transparent">
+                    <h3 class="text-xl font-bold">Growthspace UI Ecosystem</h3>
+                    <p class="text-xs text-textSecondary">Click to view Case Study</p>
+                </div>
+            </div>
+
+            <div onclick="openModal('vid2', 'Performance Ad: Trading', 'A high-impact performance ad for a trading academy using psychological triggers.', '1.2M Reach | 4.2% CTR')"
+                 class="md:col-span-2 glass rounded-2xl overflow-hidden relative group cursor-pointer reveal">
+                <div class="absolute top-4 left-4 z-10 bg-primaryAccent/20 backdrop-blur-md border border-primaryAccent/30 text-primaryAccent px-3 py-1 rounded-full text-xs font-bold">Performance Ad</div>
+                <video id="vid2_preview" src="559241b3058681b909d550f987236dc4.mp4" muted loop playsinline class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500"></video>
+                <div class="absolute bottom-0 w-full p-6 bg-gradient-to-t from-indigoBlack to-transparent">
+                    <h3 class="text-lg font-bold">The Power of Three Strategy</h3>
+                </div>
+            </div>
+
+            <div class="md:col-span-1 glass rounded-2xl p-6 reveal">
+                <div class="text-secondaryAccent mb-2 font-bold uppercase text-xs tracking-widest">Total Impact</div>
+                <div class="text-4xl font-bold">50M+</div>
+                <div class="text-sm text-textSecondary mt-2">Organic views generated.</div>
+            </div>
+
+            <div class="md:col-span-1 glass rounded-2xl p-6 reveal">
+                <div class="text-primaryAccent mb-2 font-bold uppercase text-xs tracking-widest">Efficiency</div>
+                <div class="text-4xl font-bold">24h</div>
+                <div class="text-sm text-textSecondary mt-2">Avg. turnaround time.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-24 px-6 bg-[#0D121F]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center reveal">What Industry <span class="text-primaryAccent">Leaders Say</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl reveal">
+                    <i data-lucide="quote" class="text-primaryAccent mb-4 opacity-50"></i>
+                    <p class="text-textSecondary text-sm italic mb-6 leading-relaxed">"Yuvraj's editing doesn't just look good—it converts. Sign-ups increased by 40%."</p>
+                    <div class="text-sm font-bold">Alex Rivera <span class="block text-xs font-normal text-textSecondary">Founder, BlockPay SaaS</span></div>
+                </div>
+                <div class="glass p-8 rounded-2xl reveal">
+                    <i data-lucide="quote" class="text-primaryAccent mb-4 opacity-50"></i>
+                    <p class="text-textSecondary text-sm italic mb-6 leading-relaxed">"He understands UI better than most editors. Perfect for Fintech products."</p>
+                    <div class="text-sm font-bold">Sarah Chen <span class="block text-xs font-normal text-textSecondary">Marketing Lead, NeoBank</span></div>
+                </div>
+                <div class="glass p-8 rounded-2xl reveal">
+                    <i data-lucide="quote" class="text-primaryAccent mb-4 opacity-50"></i>
+                    <p class="text-textSecondary text-sm italic mb-6 leading-relaxed">"High-quality performance ads delivered at breakneck speed. Truly elite."</p>
+                    <div class="text-sm font-bold">Marcus Thorne <span class="block text-xs font-normal text-textSecondary">Director, Quant Academy</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-indigoBlack px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center reveal">Core <span class="text-secondaryAccent">Expertise</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl reveal">
+                    <i data-lucide="zap" class="text-secondaryAccent mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Short-form Growth</h3>
+                    <p class="text-textSecondary text-sm">High-retention reels designed for viral growth.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl reveal">
+                    <i data-lucide="play-circle" class="text-secondaryAccent mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Explainer Videos</h3>
+                    <p class="text-textSecondary text-sm">Simplifying complex DeFi/SaaS into visual stories.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl reveal">
+                    <i data-lucide="trending-up" class="text-secondaryAccent mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Performance Ads</h3>
+                    <p class="text-textSecondary text-sm">Direct-response creative to lower your CPA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="fixed inset-0 z-[100] invisible opacity-0 flex items-center justify-center p-4 md:p-10 bg-indigoBlack/90 backdrop-blur-lg">
+        <div id="modalContent" class="glass max-w-5xl w-full rounded-3xl overflow-hidden flex flex-col md:flex-row scale-90">
+            <div class="w-full md:w-2/3 bg-black aspect-video md:aspect-auto">
+                <video id="modalVideo" controls class="w-full h-full"></video>
+            </div>
+            <div class="w-full md:w-1/3 p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+                        <button onclick="closeModal()"><i data-lucide="x"></i></button>
+                    </div>
+                    <div class="space-y-6">
+                        <div><h4 class="text-secondaryAccent text-xs font-bold uppercase mb-2">Strategy</h4><p id="modalDesc" class="text-textSecondary text-sm"></p></div>
+                        <div><h4 class="text-primaryAccent text-xs font-bold uppercase mb-2">Result</h4><div id="modalResult" class="text-xl font-bold text-textPrimary"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center text-textSecondary text-xs border-t border-glassBorder">
+        © 2024 Yuvraj Visuals. Strategic Video Partner for Fintech.
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Reveal animations
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // Video Modal Logic
+        function openModal(vidId, title, desc, result) {
+            const source = document.getElementById(vidId + '_preview').src;
+            const mVideo = document.getElementById('modalVideo');
+            mVideo.src = source;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalResult').innerText = result;
+            
+            document.getElementById('videoModal').classList.remove('invisible', 'opacity-0');
+            document.getElementById('modalContent').classList.remove('scale-90');
+            mVideo.play();
+        }
+
+        function closeModal() {
+            const mVideo = document.getElementById('modalVideo');
+            document.getElementById('videoModal').classList.add('invisible', 'opacity-0');
+            document.getElementById('modalContent').classList.add('scale-90');
+            mVideo.pause();
+        }
+
+        // Hover playback for preview videos
+        document.querySelectorAll('video[id*="_preview"]').forEach(v => {
+            v.parentElement.addEventListener('mouseenter', () => v.play());
+            v.parentElement.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
+        });
+    </script>
+</body>
+</html>
